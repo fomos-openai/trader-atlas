@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Trader Atlas｜OPC 专业独立交易员知识地图",
+    "subtitle": "技术专家 → 六域能力 → 可复现研究 → 本地 Paper → 复盘与否决",
+    "locale": "zh-CN",
+    "output": "00-knowledge-map.html",
+    "animation": "none",
+    "quality_profile": "showcase",
+    "visual_preset": "editorial",
+    "repository": {
+      "url": "git@github.com:fomos-openai/trader-atlas.git",
+      "revision": "56c21cbabf8c38ed950df2c0be48d460ea5f0cb5",
+      "link_mode": "local-only"
+    },
+    "views": [
+      {
+        "id": "growth-path",
+        "label": "成长主线",
+        "focus": ["profile", "policy", "capability-hub", "stage-gates", "paper", "decision"],
+        "note": "全职可以压缩工程时间，但不能压缩样本外观察时间。"
+      },
+      {
+        "id": "six-domains",
+        "label": "六大能力域",
+        "focus": ["opc", "markets", "data-research", "risk", "engineering", "discipline"],
+        "note": "六域并行建设，缺一项都不能用收益指标替代。"
+      },
+      {
+        "id": "research-loop",
+        "label": "研究流水线",
+        "focus": ["data-contract", "signals", "sizing", "backtest", "cost-stress", "evidence"],
+        "note": "同一冻结配置贯穿数据、信号、风险、回测和证据。"
+      },
+      {
+        "id": "operations-loop",
+        "label": "运行与复盘",
+        "focus": ["stage-gates", "paper", "monitor", "review", "decision"],
+        "note": "Paper 只产生意向；异常时暂停，季度决定继续、重研或退役。"
+      }
+    ]
+  },
+  "layout": {
+    "mode": "grid",
+    "origin": [54, 160],
+    "cols": 4,
+    "gapX": 80,
+    "gapY": 80,
+    "cellW": 214,
+    "cellH": 84
+  },
+  "components": [
+    {
+      "id": "profile",
+      "type": "external",
+      "label": "你：技术专家",
+      "sublabel": "工程能力 + 多市场交易经验",
+      "row": 0,
+      "col": 0,
+      "size": [172, 76],
+      "sources": [
+        {"path": "docs/index.md", "line": 17, "end_line": 25, "label": "目标与入口"}
+      ]
+    },
+    {
+      "id": "policy",
+      "type": "security",
+      "label": "先写个人交易政策",
+      "sublabel": "资金跑道 · 香港边界 · 停止线",
+      "tag": "风险先行",
+      "row": 0,
+      "col": 1,
+      "size": [190, 80],
+      "sources": [
+        {"path": "docs/index.md", "line": 38, "end_line": 43, "label": "公开边界"},
+        {"path": "docs/knowledge/01-opc-operating-model/hong-kong-regulatory-and-tax-boundaries.md", "line": 21, "end_line": 30, "label": "香港边界"}
+      ]
+    },
+    {
+      "id": "capability-hub",
+      "type": "backend",
+      "label": "六域能力系统",
+      "sublabel": "相互制衡的 OPC 操作系统",
+      "row": 0,
+      "col": 3,
+      "size": [226, 82],
+      "sources": [
+        {"path": "docs/index.md", "line": 27, "end_line": 36, "label": "六域总览"}
+      ]
+    },
+    {
+      "id": "opc",
+      "type": "security",
+      "label": "01 OPC 经营模型",
+      "sublabel": "优势 · 资金跑道 · 决策日志 · 香港边界",
+      "row": 1,
+      "col": 0,
+      "size": [192, 78],
+      "sources": [
+        {"path": "docs/knowledge/01-opc-operating-model/index.md", "line": 17, "end_line": 28, "label": "域定义"}
+      ]
+    },
+    {
+      "id": "markets",
+      "type": "external",
+      "label": "02 市场与策略",
+      "sublabel": "BTC/ETH 现货 long-or-cash 为首例",
+      "row": 1,
+      "col": 1,
+      "size": [190, 78],
+      "sources": [
+        {"path": "docs/knowledge/02-markets-and-strategies/index.md", "line": 20, "end_line": 26, "label": "域定义"}
+      ]
+    },
+    {
+      "id": "data-research",
+      "type": "database",
+      "label": "03 数据与研究",
+      "sublabel": "契约 · 偏差 · 样本外 · Trial Ledger",
+      "row": 1,
+      "col": 2,
+      "size": [190, 78],
+      "sources": [
+        {"path": "docs/knowledge/03-data-and-research/index.md", "line": 20, "end_line": 33, "label": "域定义"}
+      ]
+    },
+    {
+      "id": "risk",
+      "type": "security",
+      "label": "04 风险与组合",
+      "sublabel": "预算 · 波动 · 压力 · 停止",
+      "row": 1,
+      "col": 3,
+      "size": [190, 78],
+      "sources": [
+        {"path": "docs/knowledge/04-risk-and-portfolio/index.md", "line": 19, "end_line": 23, "label": "域定义"}
+      ]
+    },
+    {
+      "id": "engineering",
+      "type": "backend",
+      "label": "05 工程与工具",
+      "sublabel": "Python · 复现 · 审计 · 恢复",
+      "row": 2,
+      "col": 3,
+      "size": [190, 78],
+      "sources": [
+        {"path": "docs/knowledge/05-engineering-and-tools/index.md", "line": 19, "end_line": 23, "label": "域定义"}
+      ]
+    },
+    {
+      "id": "discipline",
+      "type": "messagebus",
+      "label": "06 生产纪律",
+      "sublabel": "阶段门 · 监控 · 复盘 · 事件 · 退役",
+      "row": 2,
+      "col": 2,
+      "size": [190, 78],
+      "sources": [
+        {"path": "docs/knowledge/06-production-discipline/index.md", "line": 20, "end_line": 24, "label": "域定义"}
+      ]
+    },
+    {
+      "id": "data-contract",
+      "type": "database",
+      "label": "本地数据契约",
+      "sublabel": "CSV/Parquet · UTC 日线 · SHA-256",
+      "row": 3,
+      "col": 0,
+      "size": [188, 78],
+      "sources": [
+        {"path": "src/trader_atlas/data.py", "line": 72, "end_line": 117, "label": "数据验证"}
+      ]
+    },
+    {
+      "id": "signals",
+      "type": "backend",
+      "label": "周频信号",
+      "sublabel": "90D 动量 + SMA200 · 只读已完成日线",
+      "row": 3,
+      "col": 1,
+      "size": [188, 78],
+      "sources": [
+        {"path": "src/trader_atlas/strategy.py", "line": 31, "end_line": 90, "label": "信号规则"},
+        {"path": "configs/btc-eth-spot-trend.yml", "line": 7, "end_line": 16, "label": "冻结参数"}
+      ]
+    },
+    {
+      "id": "sizing",
+      "type": "security",
+      "label": "组合与仓位",
+      "sublabel": "15% 年化波动目标 · 现货权重 ≤ 99%",
+      "row": 3,
+      "col": 2,
+      "size": [188, 78],
+      "sources": [
+        {"path": "src/trader_atlas/portfolio.py", "line": 8, "end_line": 23, "label": "仓位函数"},
+        {"path": "configs/btc-eth-spot-trend.yml", "line": 7, "end_line": 16, "label": "风险参数"}
+      ]
+    },
+    {
+      "id": "backtest",
+      "type": "backend",
+      "label": "下一 Bar 回测",
+      "sublabel": "next open · long-only · 5pp 阈值",
+      "row": 3,
+      "col": 3,
+      "size": [188, 78],
+      "sources": [
+        {"path": "src/trader_atlas/engine.py", "line": 66, "end_line": 94, "label": "仿真入口"},
+        {"path": "src/trader_atlas/engine.py", "line": 180, "end_line": 232, "label": "成交与仓位"}
+      ]
+    },
+    {
+      "id": "cost-stress",
+      "type": "cloud",
+      "label": "成本压力",
+      "sublabel": "总单边成本 15 / 25 / 40 bp",
+      "row": 4,
+      "col": 3,
+      "size": [188, 78],
+      "sources": [
+        {"path": "configs/btc-eth-spot-trend.yml", "line": 18, "end_line": 23, "label": "成本情景"},
+        {"path": "src/trader_atlas/cli.py", "line": 126, "end_line": 164, "label": "情景运行"}
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "database",
+      "label": "可审计证据包",
+      "sublabel": "config → manifest → metrics → audit",
+      "tag": "合成数据 ≠ 盈利证明",
+      "row": 4,
+      "col": 2,
+      "size": [198, 82],
+      "sources": [
+        {"path": "src/trader_atlas/artifacts.py", "line": 176, "end_line": 209, "label": "产物与校验和"},
+        {"path": "docs/case/btc-eth-spot-trend/backtest-protocol.md", "line": 29, "end_line": 43, "label": "审查协议"}
+      ]
+    },
+    {
+      "id": "stage-gates",
+      "type": "security",
+      "label": "阶段门 G0-G5",
+      "sublabel": "定义 → 数据 → 回测 → 稳健 → Paper → 复盘",
+      "tag": "失败即回退",
+      "row": 4,
+      "col": 0,
+      "size": [220, 84],
+      "sources": [
+        {"path": "docs/paths/02-stage-gates.md", "line": 16, "end_line": 35, "label": "六道阶段门"}
+      ]
+    },
+    {
+      "id": "paper",
+      "type": "backend",
+      "label": "本地 Paper Ledger",
+      "sublabel": "INTENT_ONLY · 离线 · 无成交",
+      "tag": "至少 26 个周度决策点",
+      "row": 5,
+      "col": 0,
+      "size": [220, 84],
+      "sources": [
+        {"path": "src/trader_atlas/cli.py", "line": 189, "end_line": 240, "label": "Paper 命令"},
+        {"path": "docs/case/btc-eth-spot-trend/paper-protocol.md", "line": 19, "end_line": 35, "label": "运行协议"}
+      ]
+    },
+    {
+      "id": "monitor",
+      "type": "messagebus",
+      "label": "监控与漂移",
+      "sublabel": "数据 · 执行 · 风险 · 规则",
+      "row": 5,
+      "col": 1,
+      "size": [178, 76],
+      "sources": [
+        {"path": "docs/knowledge/06-production-discipline/monitoring-drift-and-attribution.md", "line": 15, "end_line": 32, "label": "监控与阈值"}
+      ]
+    },
+    {
+      "id": "review",
+      "type": "external",
+      "label": "运营复盘",
+      "sublabel": "日 / 周 / 月 / 季度",
+      "row": 5,
+      "col": 2,
+      "size": [172, 76],
+      "sources": [
+        {"path": "docs/knowledge/06-production-discipline/operating-review-routines.md", "line": 15, "end_line": 33, "label": "复盘节奏"}
+      ]
+    },
+    {
+      "id": "decision",
+      "type": "security",
+      "label": "年度否决性决定",
+      "sublabel": "继续 · 限定扩展 · 暂停重研 · 退役",
+      "tag": "不自动晋级实盘",
+      "row": 5,
+      "col": 3,
+      "size": [208, 82],
+      "sources": [
+        {"path": "docs/knowledge/06-production-discipline/scale-pause-rework-or-retire.md", "line": 16, "end_line": 22, "label": "四种决定"},
+        {"path": "docs/paths/03-roadmap-90-180-365.md", "line": 37, "end_line": 44, "label": "年度验收"}
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "知识树｜六大能力域并行建设",
+      "wraps": ["opc", "markets", "data-research", "risk", "engineering", "discipline"],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "v0.1 唯一案例｜BTC/ETH 现货趋势轮动",
+      "wraps": ["data-contract", "signals", "sizing", "backtest", "cost-stress", "evidence"],
+      "pad": 22
+    },
+    {
+      "kind": "security-group",
+      "label": "运行边界｜止于本地 Paper，不接交易 API",
+      "wraps": ["stage-gates", "paper", "monitor", "review", "decision"],
+      "pad": 24
+    }
+  ],
+  "connections": [
+    {"id": "profile-policy", "from": "profile", "to": "policy", "label": "定义边界", "variant": "emphasis"},
+    {"id": "policy-capabilities", "from": "policy", "to": "capability-hub", "label": "约束研究", "variant": "security"},
+    {"id": "hub-risk", "from": "capability-hub", "to": "risk", "variant": "dashed"},
+    {"id": "opc-markets", "from": "opc", "to": "markets", "variant": "dashed"},
+    {"id": "markets-data", "from": "markets", "to": "data-research", "variant": "dashed"},
+    {"id": "data-risk", "from": "data-research", "to": "risk", "variant": "dashed"},
+    {"id": "risk-engineering", "from": "risk", "to": "engineering", "variant": "dashed"},
+    {"id": "engineering-discipline", "from": "engineering", "to": "discipline", "variant": "dashed"},
+    {"id": "domain-data", "from": "data-research", "to": "data-contract", "label": "契约化输入", "variant": "emphasis"},
+    {"id": "data-signals", "from": "data-contract", "to": "signals", "label": "已完成日线", "variant": "emphasis"},
+    {"id": "signals-sizing", "from": "signals", "to": "sizing", "label": "择强或现金", "variant": "emphasis"},
+    {"id": "sizing-backtest", "from": "sizing", "to": "backtest", "label": "目标权重", "variant": "emphasis"},
+    {"id": "backtest-cost", "from": "backtest", "to": "cost-stress", "label": "next open", "variant": "emphasis"},
+    {"id": "cost-evidence", "from": "cost-stress", "to": "evidence", "label": "成本后结果", "variant": "emphasis"},
+    {"id": "evidence-gates", "from": "evidence", "to": "stage-gates", "label": "证据评审", "variant": "security"},
+    {"id": "gates-paper", "from": "stage-gates", "to": "paper", "label": "仅 G3 通过", "variant": "security"},
+    {"id": "paper-monitor", "from": "paper", "to": "monitor", "label": "逐时观察", "variant": "emphasis"},
+    {"id": "monitor-review", "from": "monitor", "to": "review", "label": "漂移与归因", "variant": "emphasis"},
+    {"id": "review-decision", "from": "review", "to": "decision", "label": "季度 / 年度", "variant": "emphasis"},
+    {"id": "decision-research", "from": "decision", "to": "data-contract", "label": "rework → 新 trial", "variant": "dashed"}
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "90 / 180 / 365 日路线",
+      "items": [
+        "0-30：政策、香港边界、数据契约、基准",
+        "31-60：策略、回测、成本与风险测试",
+        "61-90：冻结候选，开启本地 Paper",
+        "91-270：至少 26 个周度决策点 + 故障演练",
+        "271-365：拒绝、重做，或另立小资金 v0.2"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "“稳定”只是一组证据条件",
+      "items": [
+        "研究可复现；成本后样本外有正向证据",
+        "风险边界明确；Paper 过程可审计",
+        "证据包保留 orders 与 trial ledger",
+        "回测或 Paper Sharpe 不是盈利证明"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "v0.1 硬边界",
+      "items": [
+        "不接交易 API，不保存密钥，不自动下单",
+        "不做杠杆、做空或衍生品执行",
+        "异常默认现金 / 暂停；真实资金不自动晋级"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "b45495b3-4a64-48ed-a4af-668f1634f9bf",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/fomo2/Documents/workspace/trader-atlas/.archify/architecture-opc-trader-knowledge-map-20260930T184152Z/candidate.json",
+  "output": "/Users/fomo2/Documents/workspace/trader-atlas/00-knowledge-map.html",
+  "specification": {
+    "sha256": "d891ffc706788bb36416ddddfd3bd1ce88a3c1b791704ee648006a63e5080ad4",
+    "bytes": 13961
+  },
+  "artifact": {
+    "sha256": "52176e449de81c02ded3d959ddc4bf99e058c2816fdef577a1e25755967e0cf0",
+    "bytes": 794821
+  }
+}

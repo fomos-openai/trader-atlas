@@ -64,8 +64,8 @@
 
 ## 发布产物
 
-- `diagrams/trader-atlas-knowledge-map.archify.json` 是知识地图真源，根目录
-  `00-knowledge-map.html` 是经 Archify finalize 验证的发布物。
+- `.archify/architecture-opc-trader-knowledge-map-<timestamp>/candidate.json` 是知识地图真源，根目录
+  `00-knowledge-map.html` 是由该 candidate 直接经 Archify finalize 验证的发布物。
 - `.archify/**` 中与该发布物对应的 candidate、finalize summary 与浏览器验证 evidence 作为审计包
   提交；重复试验、临时截图与已废弃候选应在合并前清理。
 - `book/manuscript/**` 与 `book/book.yml` 是小书真源；最终 PDF 为

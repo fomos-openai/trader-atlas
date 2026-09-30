@@ -1,0 +1,42 @@
+name: 事实更正
+description: 报告可核验的事实、引用或时效性错误
+title: "[Correction] "
+labels:
+  - correction
+body:
+  - type: input
+    id: location
+    attributes:
+      label: 页面与位置
+      description: 请提供仓库路径、标题或公开页面链接。
+      placeholder: docs/...，小节标题
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前表述
+      description: 简要摘录或转述需要更正的内容。
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: 建议更正
+      description: 给出准确表述及其适用范围。
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 一手来源与访问日期
+      description: 对监管、税务和平台状态，请提供最新官方来源。
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 提交确认
+      options:
+        - label: 此报告不包含账户、密钥、个人税务或资金信息。
+          required: true

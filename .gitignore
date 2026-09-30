@@ -40,9 +40,8 @@ tmp/
 .cache/
 
 # Local market data and run output
-data/raw/**
-data/processed/**
-data/cache/**
+data/*
+!data/README.md
 artifacts/runs/**
 reports/local/**
 

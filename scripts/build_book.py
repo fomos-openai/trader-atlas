@@ -78,37 +78,30 @@ def load_config(path: Path) -> BookConfig:
 
 
 def register_font(font_path: Path) -> tuple[str, str]:
-    candidates = [
-        font_path,
-        Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
-    ]
-    for candidate in candidates:
-        if candidate.exists():
-            digest = hashlib.sha256(candidate.read_bytes()).hexdigest()
-            prepared = candidate
-            if candidate.name.startswith("NotoSansSC"):
-                if digest != EXPECTED_NOTO_SHA256:
-                    raise RuntimeError(
-                        "Noto Sans SC checksum mismatch: "
-                        f"expected {EXPECTED_NOTO_SHA256}, got {digest}"
-                    )
-                try:
-                    from fontTools.ttLib import TTFont as FontToolsTTFont
-                    from fontTools.varLib.instancer import instantiateVariableFont
+    if not font_path.is_file():
+        raise FileNotFoundError(
+            "Noto Sans SC source font not found; pass --font as documented in book/README.md"
+        )
+    digest = hashlib.sha256(font_path.read_bytes()).hexdigest()
+    if digest != EXPECTED_NOTO_SHA256:
+        raise RuntimeError(
+            f"Noto Sans SC checksum mismatch: expected {EXPECTED_NOTO_SHA256}, got {digest}"
+        )
+    try:
+        from fontTools.ttLib import TTFont as FontToolsTTFont
+        from fontTools.varLib.instancer import instantiateVariableFont
+    except ImportError as error:
+        raise RuntimeError("fonttools is required to freeze Noto Sans SC at weight 400") from error
 
-                    variable = FontToolsTTFont(candidate)
-                    if "fvar" in variable:
-                        prepared = ROOT / "tmp/pdfs/NotoSansSC-Regular.ttf"
-                        prepared.parent.mkdir(parents=True, exist_ok=True)
-                        regular = instantiateVariableFont(variable, {"wght": 400}, inplace=False)
-                        regular.save(prepared)
-                except ImportError as error:
-                    raise RuntimeError(
-                        "fonttools is required to freeze Noto Sans SC at weight 400"
-                    ) from error
-            pdfmetrics.registerFont(TTFont("TraderAtlasSans", str(prepared)))
-            return "TraderAtlasSans", f"{candidate.name} sha256:{digest}"
-    raise FileNotFoundError("No CJK font found. Place NotoSansSC-Regular.ttf in book/assets/.")
+    prepared = font_path
+    variable = FontToolsTTFont(font_path)
+    if "fvar" in variable:
+        prepared = ROOT / "tmp/pdfs/NotoSansSC-Regular.ttf"
+        prepared.parent.mkdir(parents=True, exist_ok=True)
+        regular = instantiateVariableFont(variable, {"wght": 400}, inplace=False)
+        regular.save(prepared)
+    pdfmetrics.registerFont(TTFont("TraderAtlasSans", str(prepared)))
+    return "TraderAtlasSans", f"Noto Sans SC sha256:{digest}"
 
 
 def inline_markup(text: str) -> str:
@@ -688,7 +681,8 @@ def main() -> int:
     parser.add_argument(
         "--font",
         type=Path,
-        default=ROOT / "book/assets/NotoSansSC-Regular.ttf",
+        required=True,
+        help="Path to the checksum-pinned Noto Sans SC variable font",
     )
     args = parser.parse_args()
     output = build(args.config, args.font)

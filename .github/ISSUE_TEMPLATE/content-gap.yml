@@ -1,0 +1,36 @@
+name: 内容缺口
+description: 报告缺失、过时或需要补充的知识主题
+title: "[Content] "
+labels:
+  - content
+body:
+  - type: markdown
+    attributes:
+      value: 感谢帮助完善 Trader Atlas。请勿提交个人账户、密钥、税务或资金信息。
+  - type: input
+    id: location
+    attributes:
+      label: 页面或目录
+      description: 请提供仓库路径或公开页面链接。
+      placeholder: docs/knowledge/...
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: 缺失内容
+      description: 说明读者需要解决的问题，以及现有内容为何不足。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 建议来源
+      description: 优先提供监管机构、标准、论文或其他一手来源及访问日期。
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 提交确认
+      options:
+        - label: 此建议不承诺收益，也不包含私密交易或账户信息。
+          required: true

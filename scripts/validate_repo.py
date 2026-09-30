@@ -344,12 +344,37 @@ def validate_simulation() -> None:
     print("simulation: OK (deterministic double-run, cost stress, paper intent)")
 
 
-def _find_delivery_results(payload: Any) -> tuple[bool, bool]:
-    text = json.dumps(payload, ensure_ascii=False).lower()
-    passing_tokens = ('"passed"', '"pass"', '"ok"')
-    strict_ok = "strict" in text and any(token in text for token in passing_tokens)
-    browser_ok = "browser" in text and any(token in text for token in passing_tokens)
-    return strict_ok, browser_ok
+def _find_archify_results(artifact_sha256: str) -> tuple[bool, bool, bool]:
+    """Find receipts bound to the current HTML, not stale Archify attempts."""
+
+    strict_ok = False
+    browser_ok = False
+    visual_ok = False
+    for path in (ROOT / ".archify").rglob("00-knowledge-map.finalize-summary.json"):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if payload.get("artifact", {}).get("sha256") != artifact_sha256:
+            continue
+        gates = payload.get("gates", {})
+        strict_ok = strict_ok or (
+            payload.get("status") == "pass"
+            and gates.get("validate") == "pass"
+            and gates.get("deliver") == "pass"
+            and gates.get("check") == "pass"
+        )
+        browser_ok = browser_ok or gates.get("browser-check") == "pass"
+
+    for path in (ROOT / ".archify").rglob("00-knowledge-map.visual-check.json"):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if payload.get("artifact", {}).get("sha256") != artifact_sha256:
+            continue
+        visual_ok = visual_ok or (payload.get("status") == "pass" and payload.get("ok") is True)
+    return strict_ok, browser_ok, visual_ok
 
 
 def validate_artifacts() -> None:
@@ -374,11 +399,18 @@ def validate_artifacts() -> None:
     except json.JSONDecodeError as exc:
         errors.append(f"invalid delivery sidecar JSON: {exc}")
     else:
-        strict_ok, browser_ok = _find_delivery_results(payload)
+        html_sha256 = _sha256(html)
+        if payload.get("status") != "current":
+            errors.append("delivery sidecar is not current")
+        if payload.get("artifact", {}).get("sha256") != html_sha256:
+            errors.append("delivery sidecar is not bound to the current HTML")
+        strict_ok, browser_ok, visual_ok = _find_archify_results(html_sha256)
         if not strict_ok:
-            errors.append("delivery sidecar does not record a passing strict check")
+            errors.append("no current Archify receipt records a passing strict check")
         if not browser_ok:
-            errors.append("delivery sidecar does not record a passing browser check")
+            errors.append("no current Archify receipt records a passing browser check")
+        if not visual_ok:
+            errors.append("no current Archify visual-check receipt records a pass")
 
     reader = PdfReader(str(pdf))
     if not 45 <= len(reader.pages) <= 70:

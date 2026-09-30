@@ -16,7 +16,7 @@ Trader Atlas 采用“代码 MIT、原创内容 CC BY 4.0”的双许可证。�
 根目录的 [`LICENSE-CONTENT`](LICENSE-CONTENT) 适用于本项目原创的知识内容，包括：
 
 - `README.md`、`docs/**`、`book/**`；
-- `00-knowledge-map.html` 与 `diagrams/**` 中的原创文字和图形；
+- `00-knowledge-map.html` 与 `.archify/**/candidate.json` 中的原创文字和图形；
 - `output/pdf/trader-atlas.pdf`；
 - `LICENSING.md`、`DISCLAIMER.md`、`CONTRIBUTING.md`、`CHANGELOG.md`；
 - `docs/assets/**` 与 `book/assets/**` 中明确标记为项目原创的素材。

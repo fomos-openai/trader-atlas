@@ -16,7 +16,7 @@
 ### Noto Sans SC
 
 - 使用位置：`output/pdf/trader-atlas.pdf` 中嵌入的字形子集（发布 PDF 存在时）。
-- 来源：https://github.com/google/fonts/tree/main/ofl/notosanssc
+- 来源：https://github.com/google/fonts/tree/9710da1eacb3be272583c3224dcb70f9da6eadbb/ofl/notosanssc
 - 许可证：SIL Open Font License 1.1。
 - 修改：源字体文件不入库；构建过程仅抽取书中使用的字形并嵌入 PDF。
 
@@ -27,6 +27,13 @@
 - 版权：Copyright (c) 2026 tt-a1i (Archify)；Copyright (c) 2025 Cocoon AI。
 - 许可证：MIT；许可与免责声明条款见根目录 `LICENSE`，上述第三方版权声明同时保留。
 - 修改：本项目只提供知识地图数据与展示产物，不修改或再发布 Archify 工具包。
+
+### JetBrains Mono
+
+- 使用位置：`00-knowledge-map.html` 中由 Archify viewer 内嵌的字体数据。
+- 来源：https://github.com/JetBrains/JetBrainsMono
+- 许可证：SIL Open Font License 1.1。
+- 修改：由 Archify 打包进单文件交付物；本仓库不单独分发源字体文件。
 
 ## 工具与依赖
 
