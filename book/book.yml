@@ -1,0 +1,29 @@
+title: Trader Atlas
+subtitle: 从技术专家到 OPC 专业独立交易员
+version: 0.1.0
+language: zh-CN
+author: Echo / Trader Atlas contributors
+repository: https://github.com/fomos-openai/trader-atlas
+release_ref: v0.1.0
+license: CC BY 4.0
+output: output/pdf/trader-atlas.pdf
+chapters:
+  - book/manuscript/00-preface.md
+  - book/manuscript/01-from-tech-lead-to-opc-trader.md
+  - book/manuscript/02-minimum-viable-path.md
+  - book/manuscript/03-market-strategy-and-tool-selection.md
+  - book/manuscript/04-data-research-and-trusted-backtests.md
+  - book/manuscript/05-risk-budget-and-portfolio.md
+  - book/manuscript/06-btc-eth-python-case.md
+  - book/manuscript/07-paper-operations-and-first-year.md
+  - book/manuscript/99-references.md
+chapter_links:
+  00-preface.md: [start-here, official-sources]
+  01-from-tech-lead-to-opc-trader.md: [career-transition, personal-trading-policy, hong-kong-boundaries]
+  02-minimum-viable-path.md: [fast-track, stage-gates, roadmap-90-180-365]
+  03-market-strategy-and-tool-selection.md: [strategy-selection, stack-selection, hong-kong-boundaries]
+  04-data-research-and-trusted-backtests.md: [data-contract-quality, backtest-biases, out-of-sample-robustness]
+  05-risk-budget-and-portfolio.md: [risk-budget-sizing, drawdown-stress, liquidity-counterparty]
+  06-btc-eth-python-case.md: [case-btc-eth, case-backtest-protocol]
+  07-paper-operations-and-first-year.md: [research-to-paper, paper-runbook, operating-review]
+  99-references.md: [official-sources, bibliography]

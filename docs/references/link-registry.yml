@@ -1,0 +1,214 @@
+links:
+  start-here:
+    title: "Trader Atlas 知识库"
+    path: docs/index.md
+  paths-home:
+    title: "成长路径"
+    path: docs/paths/index.md
+  fast-track:
+    title: "技术专家到独立量化交易员的最短路径"
+    path: docs/paths/01-fast-track.md
+  stage-gates:
+    title: "研究到本地 Paper 的阶段门"
+    path: docs/paths/02-stage-gates.md
+  roadmap-90-180-365:
+    title: "90/180/365 天个人路线图"
+    path: docs/paths/03-roadmap-90-180-365.md
+  knowledge-home:
+    title: "OPC 专业独立交易员知识树"
+    path: docs/knowledge/index.md
+  knowledge-opc-home:
+    title: "OPC 经营模型"
+    path: docs/knowledge/01-opc-operating-model/index.md
+  career-transition:
+    title: "职业转型与个人优势"
+    path: docs/knowledge/01-opc-operating-model/career-transition-and-edge.md
+  capital-runway-trading-policy:
+    title: "资金跑道与个人交易政策"
+    path: docs/knowledge/01-opc-operating-model/capital-runway-and-trading-policy.md
+  decision-journal-review:
+    title: "决策日志与复盘"
+    path: docs/knowledge/01-opc-operating-model/decision-journal-and-review.md
+  hong-kong-boundaries:
+    title: "香港监管、税务与经营边界"
+    path: docs/knowledge/01-opc-operating-model/hong-kong-regulatory-and-tax-boundaries.md
+  knowledge-markets-strategies-home:
+    title: "市场与策略"
+    path: docs/knowledge/02-markets-and-strategies/index.md
+  crypto-spot-market-structure:
+    title: "数字资产现货市场结构"
+    path: docs/knowledge/02-markets-and-strategies/crypto-spot-market-structure.md
+  custody-counterparty-stablecoin-risk:
+    title: "托管、对手方与稳定币风险"
+    path: docs/knowledge/02-markets-and-strategies/custody-counterparty-and-stablecoin-risk.md
+  transaction-costs-liquidity-execution:
+    title: "交易成本、流动性与执行"
+    path: docs/knowledge/02-markets-and-strategies/transaction-costs-liquidity-and-execution.md
+  instruments-derivatives-dual-investment:
+    title: "工具、衍生品与双币投资边界"
+    path: docs/knowledge/02-markets-and-strategies/instruments-derivatives-and-dual-investment.md
+  strategy-selection:
+    title: "策略家族与选择"
+    path: docs/knowledge/02-markets-and-strategies/strategy-families-and-selection.md
+  traditional-market-expansion:
+    title: "传统市场扩展"
+    path: docs/knowledge/02-markets-and-strategies/traditional-market-expansion.md
+  knowledge-data-research-home:
+    title: "数据与研究"
+    path: docs/knowledge/03-data-and-research/index.md
+  statistics-time-series:
+    title: "统计与时间序列基础"
+    path: docs/knowledge/03-data-and-research/statistics-and-time-series.md
+  hypotheses-trial-ledger:
+    title: "假设、实验协议与 Trial Ledger"
+    path: docs/knowledge/03-data-and-research/hypotheses-and-trial-ledger.md
+  data-contract-quality:
+    title: "数据契约、质量与血缘"
+    path: docs/knowledge/03-data-and-research/data-contract-quality-and-lineage.md
+  backtest-biases:
+    title: "回测偏差与成本模型"
+    path: docs/knowledge/03-data-and-research/backtest-biases-and-cost-models.md
+  out-of-sample-robustness:
+    title: "样本外验证与稳健性"
+    path: docs/knowledge/03-data-and-research/out-of-sample-and-robustness.md
+  performance-measurement-attribution:
+    title: "绩效度量与归因"
+    path: docs/knowledge/03-data-and-research/performance-measurement-and-attribution.md
+  knowledge-risk-portfolio-home:
+    title: "风险与组合"
+    path: docs/knowledge/04-risk-and-portfolio/index.md
+  risk-budget-sizing:
+    title: "风险偏好、风险预算与仓位"
+    path: docs/knowledge/04-risk-and-portfolio/risk-appetite-budget-and-sizing.md
+  portfolio-volatility-targeting:
+    title: "组合构建与波动率目标"
+    path: docs/knowledge/04-risk-and-portfolio/portfolio-and-volatility-targeting.md
+  drawdown-stress:
+    title: "回撤、压力、尾部与市场状态风险"
+    path: docs/knowledge/04-risk-and-portfolio/drawdown-stress-tail-and-regime-risk.md
+  liquidity-counterparty:
+    title: "流动性、容量与对手方风险"
+    path: docs/knowledge/04-risk-and-portfolio/liquidity-capacity-and-counterparty.md
+  risk-guardrails-kill-switch-stop:
+    title: "Guardrails、Kill Switch 与退役规则"
+    path: docs/knowledge/04-risk-and-portfolio/guardrails-kill-switches-and-retirement.md
+  knowledge-engineering-tools-home:
+    title: "工程与工具"
+    path: docs/knowledge/05-engineering-and-tools/index.md
+  stack-selection:
+    title: "技术栈选择"
+    path: docs/knowledge/05-engineering-and-tools/stack-selection.md
+  research-data-reporting-pipeline:
+    title: "研究、数据与报告流水线"
+    path: docs/knowledge/05-engineering-and-tools/research-data-and-reporting-pipeline.md
+  paper-ledger-order-state:
+    title: "Paper 账本与订单状态"
+    path: docs/knowledge/05-engineering-and-tools/paper-ledger-and-order-state.md
+  testing-reproducibility-observability:
+    title: "测试、可复现性与可观测性"
+    path: docs/knowledge/05-engineering-and-tools/testing-reproducibility-and-observability.md
+  security-backup-disaster-recovery:
+    title: "安全、备份与灾难恢复"
+    path: docs/knowledge/05-engineering-and-tools/security-backup-and-disaster-recovery.md
+  knowledge-production-discipline-home:
+    title: "研究运行纪律"
+    path: docs/knowledge/06-production-discipline/index.md
+  research-to-paper:
+    title: "研究到 Paper 的阶段门"
+    path: docs/knowledge/06-production-discipline/research-to-paper-stage-gates.md
+  discipline-monitoring-drift-attribution:
+    title: "监控、漂移与归因"
+    path: docs/knowledge/06-production-discipline/monitoring-drift-and-attribution.md
+  incident-change-model-risk:
+    title: "事件、变更与模型风险"
+    path: docs/knowledge/06-production-discipline/incident-change-and-model-risk.md
+  operating-review:
+    title: "日、周、月与季度运营复盘"
+    path: docs/knowledge/06-production-discipline/operating-review-routines.md
+  scale-pause-rework-retire:
+    title: "扩展、暂停、重研或退役"
+    path: docs/knowledge/06-production-discipline/scale-pause-rework-or-retire.md
+  competency-readiness-scorecards:
+    title: "能力与就绪度评分卡"
+    path: docs/knowledge/06-production-discipline/competency-and-readiness-scorecards.md
+  practice-home:
+    title: "实践区：Playbooks 与模板"
+    path: docs/practice/index.md
+  choose-market-strategy:
+    title: "选择市场与策略 Playbook"
+    path: docs/practice/playbooks/choose-market-and-strategy.md
+  validate-backtest:
+    title: "验证回测 Playbook"
+    path: docs/practice/playbooks/validate-a-backtest.md
+  paper-runbook:
+    title: "启动、暂停与退役 Paper 策略"
+    path: docs/practice/playbooks/start-pause-or-retire-paper-strategy.md
+  playbook-handle-incident:
+    title: "处理回撤、数据或平台事件"
+    path: docs/practice/playbooks/handle-drawdown-data-or-venue-incident.md
+  quarterly-strategy-review:
+    title: "季度策略审查 Playbook"
+    path: docs/practice/playbooks/quarterly-strategy-review.md
+  personal-trading-policy:
+    title: "个人交易政策模板"
+    path: docs/practice/templates/personal-trading-policy.md
+  research-brief:
+    title: "研究简报模板"
+    path: docs/practice/templates/research-brief.md
+  strategy-risk-card:
+    title: "策略与风险卡模板"
+    path: docs/practice/templates/strategy-and-risk-card.md
+  data-contract-template:
+    title: "数据契约模板"
+    path: docs/practice/templates/data-contract.md
+  backtest-review:
+    title: "回测审查模板"
+    path: docs/practice/templates/backtest-review.md
+  risk-budget-template:
+    title: "风险预算模板"
+    path: docs/practice/templates/risk-budget.md
+  paper-runbook-template:
+    title: "Paper 运行手册模板"
+    path: docs/practice/templates/paper-runbook.md
+  incident-postmortem:
+    title: "事件复盘模板"
+    path: docs/practice/templates/incident-postmortem.md
+  trading-review:
+    title: "交易研究复盘模板"
+    path: docs/practice/templates/trading-review.md
+  case-btc-eth:
+    title: "BTC/ETH 现货趋势轮动 Python 案例"
+    path: docs/case/btc-eth-spot-trend/index.md
+  case-thesis:
+    title: "BTC/ETH 现货趋势轮动研究假设"
+    path: docs/case/btc-eth-spot-trend/thesis.md
+  case-data-contract:
+    title: "BTC/ETH 案例数据契约"
+    path: docs/case/btc-eth-spot-trend/data-contract.md
+  case-backtest-protocol:
+    title: "BTC/ETH 案例回测协议"
+    path: docs/case/btc-eth-spot-trend/backtest-protocol.md
+  case-risk-spec:
+    title: "BTC/ETH 案例风险规格"
+    path: docs/case/btc-eth-spot-trend/risk-spec.md
+  case-paper-protocol:
+    title: "BTC/ETH 案例本地 Paper 协议"
+    path: docs/case/btc-eth-spot-trend/paper-protocol.md
+  case-results-interpretation:
+    title: "BTC/ETH 案例结果解读"
+    path: docs/case/btc-eth-spot-trend/results-interpretation.md
+  references-home:
+    title: "参考资料"
+    path: docs/references/index.md
+  references-glossary:
+    title: "术语表"
+    path: docs/references/glossary.md
+  official-sources:
+    title: "官方与学术来源"
+    path: docs/references/official-sources.md
+  bibliography:
+    title: "参考文献"
+    path: docs/references/bibliography.md
+  references-tools-data:
+    title: "工具与数据选择"
+    path: docs/references/tools-and-data.md

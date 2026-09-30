@@ -1,0 +1,36 @@
+# Frozen baseline for the local BTC/ETH spot trend-rotation research example.
+# Parameter changes are new trials, not improvements to an already-seen result.
+universe:
+  symbols: [BTC, ETH]
+  quote_asset: USD
+
+strategy:
+  momentum_days: 90
+  sma_days: 200
+  volatility_days: 30
+  target_annual_volatility: 0.15
+  annualization_days: 365
+  max_weight: 0.99
+  min_rebalance_delta: 0.05
+  # Python convention: Monday=0 ... Sunday=6.
+  rebalance_weekday: 0
+
+execution:
+  fill_method: next_bar_open
+  fee_bps: 10.0
+  slippage_bps: 5.0
+  # Explicit one-way totals: 10 bp fee plus 5/15/30 bp slippage.
+  cost_scenarios_bps: [15.0, 25.0, 40.0]
+
+portfolio:
+  initial_cash: 100000.0
+
+data:
+  timestamp_column: timestamp
+  symbol_column: symbol
+  timestamp_semantics: bar_open_utc
+  require_daily_continuity: true
+
+paper:
+  # v0.1 cannot submit to or receive fills from an external venue.
+  intent_only: true

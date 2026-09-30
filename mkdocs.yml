@@ -1,0 +1,152 @@
+site_name: Trader Atlas
+site_description: 从技术专家到专业独立交易员的 OPC 知识树与可复现实践
+site_url: https://fomos-openai.github.io/trader-atlas/
+repo_url: https://github.com/fomos-openai/trader-atlas
+repo_name: fomos-openai/trader-atlas
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+strict: true
+use_directory_urls: true
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - 首页: index.md
+  - 成长路径:
+      - 总览: paths/index.md
+      - 最短路径: paths/01-fast-track.md
+      - 阶段门: paths/02-stage-gates.md
+      - 90/180/365 天路线图: paths/03-roadmap-90-180-365.md
+  - 知识树:
+      - 总览: knowledge/index.md
+      - OPC 经营模型:
+          - 总览: knowledge/01-opc-operating-model/index.md
+          - 职业转型与个人优势: knowledge/01-opc-operating-model/career-transition-and-edge.md
+          - 资金跑道与个人交易政策: knowledge/01-opc-operating-model/capital-runway-and-trading-policy.md
+          - 决策日志与复盘: knowledge/01-opc-operating-model/decision-journal-and-review.md
+          - 香港监管、税务与经营边界: knowledge/01-opc-operating-model/hong-kong-regulatory-and-tax-boundaries.md
+      - 市场与策略:
+          - 总览: knowledge/02-markets-and-strategies/index.md
+          - 数字资产现货市场结构: knowledge/02-markets-and-strategies/crypto-spot-market-structure.md
+          - 工具、衍生品与双币投资边界: knowledge/02-markets-and-strategies/instruments-derivatives-and-dual-investment.md
+          - 托管、对手方与稳定币风险: knowledge/02-markets-and-strategies/custody-counterparty-and-stablecoin-risk.md
+          - 交易成本、流动性与执行: knowledge/02-markets-and-strategies/transaction-costs-liquidity-and-execution.md
+          - 策略家族与选择: knowledge/02-markets-and-strategies/strategy-families-and-selection.md
+          - 传统市场扩展: knowledge/02-markets-and-strategies/traditional-market-expansion.md
+      - 数据与研究:
+          - 总览: knowledge/03-data-and-research/index.md
+          - 数据契约、质量与血缘: knowledge/03-data-and-research/data-contract-quality-and-lineage.md
+          - 统计与时间序列基础: knowledge/03-data-and-research/statistics-and-time-series.md
+          - 假设、实验协议与 Trial Ledger: knowledge/03-data-and-research/hypotheses-and-trial-ledger.md
+          - 回测偏差与成本模型: knowledge/03-data-and-research/backtest-biases-and-cost-models.md
+          - 样本外验证与稳健性: knowledge/03-data-and-research/out-of-sample-and-robustness.md
+          - 绩效度量与归因: knowledge/03-data-and-research/performance-measurement-and-attribution.md
+      - 风险与组合:
+          - 总览: knowledge/04-risk-and-portfolio/index.md
+          - 风险偏好、风险预算与仓位: knowledge/04-risk-and-portfolio/risk-appetite-budget-and-sizing.md
+          - 组合构建与波动率目标: knowledge/04-risk-and-portfolio/portfolio-and-volatility-targeting.md
+          - 回撤、压力、尾部与状态风险: knowledge/04-risk-and-portfolio/drawdown-stress-tail-and-regime-risk.md
+          - 流动性、容量与对手方风险: knowledge/04-risk-and-portfolio/liquidity-capacity-and-counterparty.md
+          - Guardrails、Kill Switch 与退役规则: knowledge/04-risk-and-portfolio/guardrails-kill-switches-and-retirement.md
+      - 工程与工具:
+          - 总览: knowledge/05-engineering-and-tools/index.md
+          - 技术栈选择: knowledge/05-engineering-and-tools/stack-selection.md
+          - 研究、数据与报告流水线: knowledge/05-engineering-and-tools/research-data-and-reporting-pipeline.md
+          - Paper 账本与订单状态: knowledge/05-engineering-and-tools/paper-ledger-and-order-state.md
+          - 测试、可复现性与可观测性: knowledge/05-engineering-and-tools/testing-reproducibility-and-observability.md
+          - 安全、备份与灾难恢复: knowledge/05-engineering-and-tools/security-backup-and-disaster-recovery.md
+      - 研究运行纪律:
+          - 总览: knowledge/06-production-discipline/index.md
+          - 研究到 Paper 的阶段门: knowledge/06-production-discipline/research-to-paper-stage-gates.md
+          - 监控、漂移与归因: knowledge/06-production-discipline/monitoring-drift-and-attribution.md
+          - 运营复盘: knowledge/06-production-discipline/operating-review-routines.md
+          - 事件、变更与模型风险: knowledge/06-production-discipline/incident-change-and-model-risk.md
+          - 能力与就绪度评分卡: knowledge/06-production-discipline/competency-and-readiness-scorecards.md
+          - 扩展、暂停、重研或退役: knowledge/06-production-discipline/scale-pause-rework-or-retire.md
+  - 实践:
+      - 总览: practice/index.md
+      - 操作手册:
+          - 选择市场与策略: practice/playbooks/choose-market-and-strategy.md
+          - 验证回测: practice/playbooks/validate-a-backtest.md
+          - 启动、暂停与退役 Paper 策略: practice/playbooks/start-pause-or-retire-paper-strategy.md
+          - 处理回撤、数据或平台事件: practice/playbooks/handle-drawdown-data-or-venue-incident.md
+          - 季度策略审查: practice/playbooks/quarterly-strategy-review.md
+      - 模板:
+          - 个人交易政策: practice/templates/personal-trading-policy.md
+          - 研究简报: practice/templates/research-brief.md
+          - 策略与风险卡: practice/templates/strategy-and-risk-card.md
+          - 回测审查: practice/templates/backtest-review.md
+          - 数据契约: practice/templates/data-contract.md
+          - 风险预算: practice/templates/risk-budget.md
+          - Paper 运行手册: practice/templates/paper-runbook.md
+          - 交易研究复盘: practice/templates/trading-review.md
+          - 事件复盘: practice/templates/incident-postmortem.md
+  - BTC/ETH 案例:
+      - 案例入口: case/btc-eth-spot-trend/index.md
+      - 研究假设: case/btc-eth-spot-trend/thesis.md
+      - 数据契约: case/btc-eth-spot-trend/data-contract.md
+      - 风险规格: case/btc-eth-spot-trend/risk-spec.md
+      - 回测协议: case/btc-eth-spot-trend/backtest-protocol.md
+      - 本地 Paper 协议: case/btc-eth-spot-trend/paper-protocol.md
+      - 结果解读: case/btc-eth-spot-trend/results-interpretation.md
+  - 参考资料:
+      - 总览: references/index.md
+      - 官方与学术来源: references/official-sources.md
+      - 参考文献: references/bibliography.md
+      - 工具与数据选择: references/tools-and-data.md
+      - 术语表: references/glossary.md
+  - 交互知识地图: https://fomos-openai.github.io/trader-atlas/knowledge-map/
+  - 小书 PDF: https://fomos-openai.github.io/trader-atlas/downloads/trader-atlas.pdf
+
+copyright: >-
+  Copyright &copy; 2026 Echo · 原创知识内容采用
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>

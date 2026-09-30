@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trader-atlas"
+version = "0.1.0"
+description = "Offline, reproducible BTC/ETH trend-rotation research sample"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { file = "LICENSE" }
+authors = [{ name = "trader-atlas contributors" }]
+dependencies = [
+  "numpy>=2.0,<3",
+  "pandas>=2.2,<3",
+  "pyarrow>=17,<24",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+book = [
+  "fonttools>=4.55,<5",
+  "reportlab>=4.4,<5",
+  "pypdf>=6.0,<7",
+  "pdfplumber>=0.11,<1",
+]
+
+[dependency-groups]
+dev = [
+  "mkdocs-material>=9.6,<10",
+  "mypy>=1.18,<2",
+  "pytest>=8.3,<10",
+  "ruff>=0.13,<1",
+  "types-PyYAML>=6.0,<7",
+]
+
+[project.scripts]
+trader-atlas = "trader_atlas.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_redundant_casts = true
+warn_unused_ignores = true
